@@ -6,6 +6,7 @@ public class Missile : Projectile
 
     private DamageEfect _enemyDamageEfect;
     private MissileDamage _missileDamage;
+    [SerializeField] private float _timeLive = 1f;
 
 
 
@@ -17,6 +18,7 @@ public class Missile : Projectile
     }
     protected override void Launch()
     {
+        _timeLive -= Time.deltaTime;
         if (_projectileTarget == null)
         {
             Destroy(gameObject);
@@ -30,22 +32,26 @@ public class Missile : Projectile
             return;
         }
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
+        if (_timeLive <= 0)
+        {
+            Detonate();
+        }
     }
 
     protected override void HitTarget()
     {
+        Detonate();
+    }
+    private void Detonate()
+    {
         _enemyDamageEfect.EnemyDamageEfect(_damageEfect);
-        if (_explosionRadius > 0f)
-        {
-            _missileDamage.Explode(_explosionRadius,_projectileTarget,_damage);
-        }
-
+        _missileDamage.Explode(_explosionRadius, _projectileTarget, _damage);
         Destroy(gameObject);
     }
-       private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,_explosionRadius);
+        Gizmos.DrawWireSphere(transform.position, _explosionRadius);
     }
 
 

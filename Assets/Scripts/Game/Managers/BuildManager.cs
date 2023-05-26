@@ -32,10 +32,14 @@ public class BuildManager : MonoBehaviour
         _turretParameters = _turretToBuild.prefab.GetComponent<Turret>();
         GameObject turretPrefab = _turretToBuild.prefab;
         _turretCost = _turretParameters.cost;
-        GameObject newTurret = Instantiate(turretPrefab, node.positionOffset, Quaternion.identity);
-        node.turret = newTurret;
-        _shoppingManager.BuyTurret(_turretCost);
-        BuildEfect(node);
+        if (PlayerStats.curentBalance >= _turretCost)
+        {
+            GameObject newTurret = Instantiate(turretPrefab, node.positionOffset, Quaternion.identity);
+            node.turret = newTurret;
+            _shoppingManager.BuyTurret(_turretCost);
+            BuildEfect(node);
+        }
+
 
     }
     private void BuildEfect(Node node)

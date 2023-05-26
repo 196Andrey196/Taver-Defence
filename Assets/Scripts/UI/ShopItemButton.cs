@@ -4,28 +4,35 @@ using TMPro;
 public class ShopItemButton : MonoBehaviour
 {
     private BuildManager _buildManager;
-    [SerializeField] private TurretBluprint _standartTurretPrefab;
-    [SerializeField] private TurretBluprint _missileLaucherPrefab;
+    [SerializeField] private TurretBluprint _standartTurretInfo;
+    [SerializeField] private TurretBluprint _missileLaucherInfo;
+    [SerializeField] private TurretBluprint _laserBeamerInfo;
 
 
     private void Start()
     {
         _buildManager = BuildManager.instance;
-        SetItemCost(_standartTurretPrefab.prefab, _standartTurretPrefab.turetTextCost);
-        SetItemCost(_missileLaucherPrefab.prefab, _missileLaucherPrefab.turetTextCost);
+        SetItemCost(_standartTurretInfo.prefab, _standartTurretInfo.turetTextCost);
+        SetItemCost(_missileLaucherInfo.prefab, _missileLaucherInfo.turetTextCost);
+        SetItemCost(_laserBeamerInfo.prefab, _laserBeamerInfo.turetTextCost);
 
     }
 
     public void SelectStandartTurret()
     {
 
-        _buildManager.SelectTurretToBuild(_standartTurretPrefab);
+        _buildManager.SelectTurretToBuild(_standartTurretInfo);
     }
 
+    public void SelectLaserBeamer()
+    {
+
+        _buildManager.SelectTurretToBuild(_laserBeamerInfo);
+    }
     public void SelectMissileLaucher()
     {
 
-        _buildManager.SelectTurretToBuild(_missileLaucherPrefab);
+        _buildManager.SelectTurretToBuild(_missileLaucherInfo);
     }
     private void SetItemCost(GameObject prefab, TextMeshProUGUI textCost)
     {

@@ -7,16 +7,20 @@ public class MissileDamage : MonoBehaviour
 
     public void Explode(float explosionRadius, GameObject target, int damage)
     {
-        TakeDamage enemyTakeDamage = target.GetComponent<TakeDamage>();
         Collider[] enemyColliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider enemyCollider in enemyColliders)
         {
-            if (enemyCollider.tag == "Enemy")
+            if (enemyCollider.CompareTag("Enemy"))
             {
-                enemyTakeDamage.Damage(damage);
+                TakeDamage enemyTakeDamage = enemyCollider.GetComponent<TakeDamage>();
+                if (enemyTakeDamage != null)
+                {
+                    enemyTakeDamage.Damage(damage);
+                }
             }
         }
     }
+
 }
 
 

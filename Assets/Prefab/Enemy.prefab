@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce3c5e1578fa9649a51164cc17bf639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 8
+  _speed: 12
   _health: 100
   _costToDie: 50
   _dieEfect: {fileID: 3457617158208819212, guid: c2ae1967e9b41ed41b10a79090dbea4d, type: 3}

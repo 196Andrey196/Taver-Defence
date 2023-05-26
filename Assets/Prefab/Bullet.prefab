@@ -138,6 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 20
-  _damage: 50
+  _damage: 25
   _projectileTarget: {fileID: 0}
   _damageEfect: {fileID: 2821489880641585945, guid: acc94e7233ec77a4ab721f914bbf0c87, type: 3}

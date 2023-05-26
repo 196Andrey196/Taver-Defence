@@ -338,5 +338,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd514854b0d35b498539a7aa4db0f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Projectile: {fileID: 9067669167020661925, guid: eff0832b981a8104e95eb79fab537efb, type: 3}
+  _Projectile: {fileID: 5202399214277416286, guid: eff0832b981a8104e95eb79fab537efb, type: 3}
   _firePoint: {fileID: 2688882337904581259}

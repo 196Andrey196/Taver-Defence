@@ -10,7 +10,6 @@ public class RotateToTarget : MonoBehaviour
 
     void Update()
     {
-
         RotateToDirection();
     }
     private void RotateToDirection()
