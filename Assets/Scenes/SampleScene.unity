@@ -788,11 +788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_PreferredWidth
-      value: 180
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_PreferredHeight
-      value: 176
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533255, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -13363,6 +13363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc1fe064811fc14097be535f1fe1a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _statusBuild: 0
   _buildEfect: {fileID: 1179978468463120731, guid: 140aff5ed86889e4dbef026fd1da266a, type: 3}
 --- !u!114 &1688518240
 MonoBehaviour:
@@ -13844,7 +13845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.6, y: -53.713676}
+  m_AnchoredPosition: {x: 4.5999756, y: -53.713684}
   m_SizeDelta: {x: -87.01821, y: -153.27144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767512860
@@ -15296,12 +15297,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
+      propertyPath: m_MinWidth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
+      propertyPath: m_FlexibleWidth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
+      propertyPath: m_FlexibleHeight
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_PreferredWidth
-      value: 180
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_PreferredHeight
-      value: 176
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533255, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -16087,7 +16100,7 @@ MonoBehaviour:
     _prefab: {fileID: 9203923971650196424, guid: cd0bf4e96b043304baa811ca430bce52, type: 3}
     _turetCost: {fileID: 1085337115}
   _laserBeamerInfo:
-    _prefab: {fileID: 7160762280919113194, guid: 61e916afe7292b94eb9d372a84f1b840, type: 3}
+    _prefab: {fileID: 5036824944404328245, guid: 14030492c2d760145918bda2bfcaf097, type: 3}
     _turetCost: {fileID: 745078421}
 --- !u!1001 &2058210671
 PrefabInstance:
@@ -17069,11 +17082,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_PreferredWidth
-      value: 180
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533254, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_PreferredHeight
-      value: 176
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6551412384027533255, guid: 15e272bf09debd0418dd845058b07627, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

@@ -7,6 +7,7 @@ public class BuildManager : MonoBehaviour
     private int _turretCost;
     private Turret _turretParameters;
     private TurretBluprint _turretToBuild;
+    public bool _statusBuild;
     [SerializeField] private GameObject _buildEfect;
     public bool CanBuild { get { return _turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.curentBalance >= _turretCost; } }
@@ -34,12 +35,16 @@ public class BuildManager : MonoBehaviour
         _turretCost = _turretParameters.cost;
         if (PlayerStats.curentBalance >= _turretCost)
         {
+            _statusBuild = true;
             GameObject newTurret = Instantiate(turretPrefab, node.positionOffset, Quaternion.identity);
             node.turret = newTurret;
             _shoppingManager.BuyTurret(_turretCost);
             BuildEfect(node);
         }
-
+        else
+        {
+            _statusBuild = false;
+        }
 
     }
     private void BuildEfect(Node node)
