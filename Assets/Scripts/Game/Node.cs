@@ -40,7 +40,7 @@ public class Node : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (!_buildManager.CanBuild || EventSystem.current.IsPointerOverGameObject() && _buildManager == false) return;
+        if (!_buildManager.CanBuild || EventSystem.current.IsPointerOverGameObject()) return;
         if (_turret != null)
         {
             //TODO MASAGE: Dispaly on screen
