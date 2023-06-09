@@ -25,32 +25,31 @@ public class Node : MonoBehaviour
         _buildManager = BuildManager.instance;
         _startColor = _renderer.material.color;
     }
+    private void Update()
+    {
+        
+    }
 
     private void OnMouseEnter()
     {
-        if (!_buildManager.CanBuild || EventSystem.current.IsPointerOverGameObject()) return;
-        if (_buildManager.HasMoney) _renderer.material.color = _toBuildColor;
+        if (_buildManager.canBuild || EventSystem.current.IsPointerOverGameObject()) return;
+        if (_buildManager.hasMoney) _renderer.material.color = _toBuildColor;
         else _renderer.material.color = _cantBuildColor;
-
-
     }
     private void OnMouseExit()
     {
-        DefaultColor();
+        _renderer.material.color = _startColor;
     }
     private void OnMouseDown()
     {
-        if (!_buildManager.CanBuild || EventSystem.current.IsPointerOverGameObject()) return;
         if (_turret != null)
         {
-            //TODO MASAGE: Dispaly on screen
-            Debug.Log("Can't build there!");
+            _buildManager.SelectNode(this);
             return;
         }
+
+
         _buildManager.BuildTurretOn(this);
     }
-    private void DefaultColor()
-    {
-        _renderer.material.color = _startColor;
-    }
+
 }

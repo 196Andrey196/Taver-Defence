@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Missile : Projectile
+public class Missile : SimplProjectile
 {
     [SerializeField] private float _explosionRadius = 0f;
 

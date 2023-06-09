@@ -1,13 +1,19 @@
-using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 
-    private bool _gameEnded = false;
+    public static bool gameIsOver;
+    [SerializeField] private GameObject _gameOverMenu;
+
+    private void Start()
+    {
+        gameIsOver = false;
+        _gameOverMenu.SetActive(false);
+    }
     void Update()
     {
-        if (_gameEnded)
+        if (gameIsOver)
         {
             return;
         }
@@ -19,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
-        _gameEnded = true;
-        Debug.Log("End Game!!");
+        gameIsOver = true;
+        _gameOverMenu.SetActive(true);
     }
 }

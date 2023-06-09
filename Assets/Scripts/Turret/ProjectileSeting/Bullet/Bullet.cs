@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : Projectile
+public class Bullet : SimplProjectile
 {
        private DamageEfect _enemyDamageEfect;
        private BulletDamage _bulletDamage;

@@ -3,7 +3,7 @@ using UnityEngine;
 public class CheсkTarget : MonoBehaviour
 {
 
-
+    private TurretBluprint _turretBluprint;
     private string _enemyTag = "Enemy";
    
     private float _startTime = 0f;
@@ -41,4 +41,5 @@ public class CheсkTarget : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, targetRange);
     }
+    
 }

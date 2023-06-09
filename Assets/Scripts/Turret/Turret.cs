@@ -9,6 +9,26 @@ public class Turret : MonoBehaviour
         get { return _cost; }
         set { _cost = value; }
     }
+
+    [SerializeField] private int _upgradeCost;
+    public int upgradeCost
+    {
+        get { return _upgradeCost; }
+        set { _upgradeCost = value; }
+    }
+    [SerializeField] private int _sellCost;
+    public int sellCost
+    {
+        get { return _sellCost; }
+        set { _sellCost = value; }
+    }
+    [SerializeField] private bool _isUpgraded;
+    public bool isUpgraded
+    {
+        get { return _isUpgraded; }
+        set { _isUpgraded = value; }
+    }
+
     [SerializeField] private float _speedRotation = 11f;
     public float speedRotation
     {
@@ -40,6 +60,8 @@ public class Turret : MonoBehaviour
         get { return _target; }
         set { _target = value; }
     }
+
+
 
 
 }

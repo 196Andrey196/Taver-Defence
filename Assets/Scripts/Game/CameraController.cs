@@ -14,6 +14,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.gameIsOver)
+        {
+            this.enabled = false;
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Return)) transform.position = new Vector3(0f, _maxY, 0f);
         KeyBoardMove();
         ScrolMouse();

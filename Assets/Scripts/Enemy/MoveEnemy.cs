@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
@@ -11,17 +10,19 @@ public class MoveEnemy : MonoBehaviour
     {
         _target = WayPoints.points[0];
         _enemy = GetComponent<Enemy>();
+
     }
 
     private void Update()
     {
         MoveToPoint();
+        _enemy.curentSpeed = _enemy.startSpeed;
     }
 
     private void MoveToPoint()
     {
         Vector3 direction = _target.position - transform.position;
-        transform.Translate(direction.normalized * _enemy.speed * Time.deltaTime, Space.World);
+        transform.Translate(direction.normalized * _enemy.curentSpeed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, _target.position) <= 0.4f)
         {

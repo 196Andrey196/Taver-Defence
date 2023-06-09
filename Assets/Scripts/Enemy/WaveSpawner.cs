@@ -9,9 +9,9 @@ public class WaveSpawner : MonoBehaviour
     public TextMeshProUGUI _waveCountDownText;
     [SerializeField] private Transform _enemy;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private float _timeBetweenWaves = 5f;
-    [SerializeField] private float _countDown = 2f;
-    [SerializeField] private int _waveIndex = 0;
+    [SerializeField] private float _timeBetweenWaves;
+    [SerializeField] private float _countDown;
+    [SerializeField] private int _waveIndex;
 
     private void Update()
     {
@@ -34,6 +34,7 @@ public class WaveSpawner : MonoBehaviour
     private IEnumerator SpawnWave()
     {
         _waveIndex++;
+        PlayerStats.rounds++;
         for (int i = 0; i < _waveIndex; i++)
         {
             SpawnEnemy();

@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
         FireEfect fireEfect = _firePoint.GetComponent<FireEfect>();
         fireEfect.Fireshot();
         GameObject buletGo = (GameObject)Instantiate(_Projectile, _firePoint.position, _firePoint.rotation);
-        Projectile projectile = buletGo.GetComponent<Projectile>();
+        SimplProjectile projectile = buletGo.GetComponent<SimplProjectile>();
         if (projectile != null) projectile.projectileTarget = target;
     }
 

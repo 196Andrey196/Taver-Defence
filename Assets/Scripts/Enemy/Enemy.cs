@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    public float speed
+    [SerializeField] private float _startSpeed;
+    public float startSpeed
     {
-        get { return _speed; }
+        get { return _startSpeed; }
+    }
+    [SerializeField] private float _curentSpeed;
+    public float curentSpeed
+    {
+        get { return _curentSpeed; }
+        set { _curentSpeed = value; }
     }
     [SerializeField] private float _health;
     public float health
@@ -23,6 +29,9 @@ public class Enemy : MonoBehaviour
     {
         get { return _dieEfect; }
     }
-
+    private void Start()
+    {
+        _curentSpeed = _startSpeed;
+    }
 
 }

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private static int _curentBalance;
-    public static int curentBalance
+    public static PlayerStats instance;
+    [SerializeField] private int _curentBalance;
+    public int curentBalance
     {
         get { return _curentBalance; }
         set { _curentBalance = value; }
@@ -22,18 +23,30 @@ public class PlayerStats : MonoBehaviour
         get { return _curentLive; }
         set { _curentLive = value; }
     }
-    [SerializeField] private int _startLive = 10;
+    [SerializeField] private int _startLive;
 
     public int startLive
     {
         get { return _startLive; }
         set { _startLive = value; }
     }
+    [SerializeField] private static int _rounds;
+    public static int rounds
+    {
+        get { return _rounds; }
+        set { _rounds = value; }
+    }
 
 
     private void Start()
     {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
         _curentBalance = _startMoney;
         _curentLive = _startLive;
     }
+
 }

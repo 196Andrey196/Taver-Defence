@@ -14,14 +14,14 @@ public class TakeDamage : MonoBehaviour
             Die();
         }
     }
-    public void Damage(int amount)
+    public void Damage(float amount)
     {
         _enemy.health -= amount;
     }
 
     private void Die()
     {
-        PlayerStats.curentBalance += _enemy.costToDie;
+        PlayerStats.instance.curentBalance += _enemy.costToDie;
         Debug.Log(_enemy.costToDie + "+ on balance");
         GameObject dieEfect = Instantiate(_enemy.dieEfect, transform.position, transform.rotation);
         Destroy(dieEfect, 1f);

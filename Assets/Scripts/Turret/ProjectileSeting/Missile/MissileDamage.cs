@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
 public class MissileDamage : MonoBehaviour
 {
 
 
-    public void Explode(float explosionRadius, GameObject target, int damage)
+    public void Explode(float explosionRadius, GameObject target, float damage)
     {
         Collider[] enemyColliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider enemyCollider in enemyColliders)
