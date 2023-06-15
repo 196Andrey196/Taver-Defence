@@ -6,7 +6,6 @@ public class Laser : ProjectileMainHaracteristics
     private Turret _turret;
     private TakeDamage _takeDamage;
     private Enemy _enemy;
-    private bool _useLaser = false;
     [SerializeField] private Transform _firePoint;
     [SerializeField] private ParticleSystem _impactEfect;
     [SerializeField] private Light _lightImpact;

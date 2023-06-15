@@ -6,8 +6,6 @@ public class LivesUi : MonoBehaviour
     [SerializeField] TextMeshProUGUI _playerLiveText;
     private void Update()
     {
-
-        _playerLiveText.text = PlayerStats.curentLive + " LIVES";
-
+        _playerLiveText.text = PlayerStats.instance.curentLive + " LIVES";
     }
 }

@@ -4,8 +4,8 @@ using TMPro;
 
 public class ShoppingManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _money;
     public static ShoppingManager instance;
+    [SerializeField] private TextMeshProUGUI _money;
     private void Start()
     {
         CurentBalance();
@@ -22,10 +22,7 @@ public class ShoppingManager : MonoBehaviour
     }
     public void PurchaseTurret(int turretCost)
     {
-
         PlayerStats.instance.curentBalance -= turretCost;
-
-
     }
     private void CurentBalance()
     {

@@ -17,8 +17,6 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private NodeUi _nodeUi;
     [SerializeField] private GameObject _buildEfect;
 
-    // [SerializeField] private GameObject _sellEfect;
-    // public GameObject sellEfect { get { return _sellEfect; } }
     public bool canBuild { get { return _buildMode == false; } }
     public bool hasMoney { get { return PlayerStats.instance.curentBalance >= _turretCost; } }
 
@@ -71,7 +69,7 @@ public class BuildManager : MonoBehaviour
         _turretCost = _turretParameters.cost;
         if (_buildMode == true && PlayerStats.instance.curentBalance >= _turretCost)
         {
-
+            Debug.Log(_turretCost);
             ShoppingManager.instance.PurchaseTurret(_turretCost);
             GameObject newTurret = Instantiate(_turretToBuild, node.positionOffset, Quaternion.identity);
             node.turret = newTurret;

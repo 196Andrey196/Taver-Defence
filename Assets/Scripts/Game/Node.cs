@@ -25,16 +25,14 @@ public class Node : MonoBehaviour
         _buildManager = BuildManager.instance;
         _startColor = _renderer.material.color;
     }
-    private void Update()
-    {
-        
-    }
 
     private void OnMouseEnter()
     {
+
         if (_buildManager.canBuild || EventSystem.current.IsPointerOverGameObject()) return;
         if (_buildManager.hasMoney) _renderer.material.color = _toBuildColor;
         else _renderer.material.color = _cantBuildColor;
+
     }
     private void OnMouseExit()
     {
@@ -42,14 +40,17 @@ public class Node : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
         if (_turret != null)
         {
             _buildManager.SelectNode(this);
             return;
         }
+        if (BuildManager.instance.buildMode)
+        {
+            _buildManager.BuildTurretOn(this);
+        }
 
-
-        _buildManager.BuildTurretOn(this);
     }
 
 }

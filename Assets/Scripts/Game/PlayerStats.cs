@@ -17,8 +17,8 @@ public class PlayerStats : MonoBehaviour
         set { _startMoney = value; }
     }
 
-    [SerializeField] private static int _curentLive;
-    public static int curentLive
+    [SerializeField] private  int _curentLive;
+    public  int curentLive
     {
         get { return _curentLive; }
         set { _curentLive = value; }
@@ -30,8 +30,8 @@ public class PlayerStats : MonoBehaviour
         get { return _startLive; }
         set { _startLive = value; }
     }
-    [SerializeField] private static int _rounds;
-    public static int rounds
+    [SerializeField] private  int _rounds;
+    public  int rounds
     {
         get { return _rounds; }
         set { _rounds = value; }

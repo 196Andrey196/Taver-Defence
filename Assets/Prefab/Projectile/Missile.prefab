@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43605c6fc7e1dc64db72af066faed480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 16
-  _damage: 50
+  _damage: 40
   _projectileTarget: {fileID: 0}
+  _speed: 16
   _damageEfect: {fileID: 6688396635316442060, guid: f30c3cbdce3b37543b9242ff162ee93c, type: 3}
   _explosionRadius: 4
   _timeLive: 0.8

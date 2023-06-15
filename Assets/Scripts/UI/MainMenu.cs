@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    [SerializeField] private SceneFader _sceneFader;
+    [SerializeField] private int _levelToLoad;
     public void Play()
     {
-        SceneManager.LoadScene(1);
+      _sceneFader.FadeTo(_levelToLoad);
     }
     public void Quit()
     {

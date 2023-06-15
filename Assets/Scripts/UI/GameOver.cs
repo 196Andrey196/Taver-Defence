@@ -1,21 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _roundsSurvive;
-    private void OnEnable()
-    {
-        _roundsSurvive.text = PlayerStats.rounds.ToString();
-    }
+    [SerializeField] private SceneFader _sceneFader;
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _sceneFader.FadeTo(SceneManager.GetActiveScene().buildIndex);
     }
     public void Menu()
     {
-        Debug.Log("Menu");
+        _sceneFader.FadeTo(0);
     }
 }
